@@ -15,17 +15,17 @@ const initialState = {
 	home: {
 		index: 0,
 		routes: [{key: 'home', title: 'Home Page'}]
-	}
+	},
 
 	about: {
 		index: 0,
 		routes: [{key: 'about', title: 'About Page'}]
-	}
+	},
 
 	contact: {
 		index: 0,
 		routes: [{key: 'contact', title: 'Contact Page'}]
-	}
+	},
 
 	settings: {
 		index: 0,
@@ -87,3 +87,5 @@ function navigationState(state=initialState, action) {
 
 	}
 }
+
+export default navigationState
