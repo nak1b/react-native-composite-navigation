@@ -30,7 +30,10 @@ class Navigation extends Component {
 	}
 
 	_renderScene() {
-		return <View style={{flex: 1, backgroundColor: 'blue'}}/>
+		return (
+			<View style={{flex: 1, marginTop: 64, backgroundColor: 'blue'}}>
+			</View>
+		)
 	}
 
 	render() {
