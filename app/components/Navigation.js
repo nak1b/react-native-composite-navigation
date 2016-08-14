@@ -11,16 +11,47 @@ const {
 
 
 class Navigation extends Component {
+	constructor(props) {
+		super(props)
+
+		this._renderHeader = this._renderHeader.bind(this)
+		this._renderScene = this._renderScene.bind(this)
+	}
+
+	_renderHeader() {
+		return <View />
+	}
+
+	_renderScene() {
+		return <View style={{backgroundColor: 'blue'}}/>
+	}
+
 	render() {
+		const {navigationState} = this.props;
+    	const {tabs} = navigationState;
+    	const tabKey = tabs.routes[tabs.index].key;
+    	const scenes = navigationState[tabKey];
+
 		return (
-			<View style={{backgroundColor: "red", flex: 1}} />
+			<View style={styles.container}>
+				<NavigationCardStack 
+					key={'stact_' + tabKey }
+					navigationState={scenes}
+					renderOverlay={this._renderHeader}
+					renderScene={this._renderScene}
+				/>
+
+
+			</View>
 		)
 	}
 }
 
 
 const styles = StyleSheet.create({
-
+	container: {
+		flex: 1
+	}
 })
 
 

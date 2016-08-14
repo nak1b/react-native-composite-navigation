@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
 import reducers from './reducers/index'
-import NavigationContainer from './components/Navigation'
+import NavigationContainer from './containers/NavigationContainer'
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 const store = createStoreWithMiddleware(reducers)
