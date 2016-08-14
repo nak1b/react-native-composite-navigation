@@ -18,12 +18,19 @@ class Navigation extends Component {
 		this._renderScene = this._renderScene.bind(this)
 	}
 
-	_renderHeader() {
-		return <View />
+	_renderHeader(props) {
+		return (
+			<NavigationHeader
+				{...props}
+	  			renderTitleComponent={props => {
+	  				const title = props.scene.route.title
+	  				return <NavigationHeader.Title>{title}</NavigationHeader.Title>
+	  			}} />
+	  	)
 	}
 
 	_renderScene() {
-		return <View style={{backgroundColor: 'blue'}}/>
+		return <View style={{flex: 1, backgroundColor: 'blue'}}/>
 	}
 
 	render() {
@@ -40,8 +47,6 @@ class Navigation extends Component {
 					renderOverlay={this._renderHeader}
 					renderScene={this._renderScene}
 				/>
-
-
 			</View>
 		)
 	}

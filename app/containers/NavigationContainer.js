@@ -3,7 +3,7 @@ import Navigation from '../components/Navigation'
 
 export default connect(
   state => ({
-    appNavigationState: state.navigationState,
+    navigationState: state.navigationState,
   }),
 
   dispatch => ({
