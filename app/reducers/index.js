@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import navState from './NavReducer'
+import navigationState from './NavReducer'
 
 export default combineReducers({
-	navState
+	navigationState
 })
