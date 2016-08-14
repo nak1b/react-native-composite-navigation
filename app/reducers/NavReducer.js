@@ -54,5 +54,22 @@ function navigationState(state=initialState, action) {
 			}
 		}
 
+		case NAV_POP: {
+			const {tabs} = state;
+			const tabKey = tabs.routes[tabs.index].key
+			const scenes = state[tabKey]
+			const nextScenes = NavigationStateUtils.pop(scenes)
+
+			if(scenes !== nextScenes) {
+				return {
+					...state,
+					[tabKey]: nextScenes
+				}
+				break
+			}
+		}
+
+		
+
 	}
 }
