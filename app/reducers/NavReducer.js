@@ -69,7 +69,21 @@ function navigationState(state=initialState, action) {
 			}
 		}
 
-		
+		case SELECT_TAB: {
+			const tabKey = action.tabKey
+			const tabs = NavigationStateUtils.jumpTo(state.tabs, tabKey)
+
+			if(state.tabs !== tabs) {
+				return {
+					...state,
+					tabs
+				}
+			}
+			return state
+		}
+
+		default:
+			return state
 
 	}
 }
