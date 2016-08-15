@@ -8,6 +8,7 @@ import Button from './Button'
 //Screens
 import HomeScreen from '../screens/Home'
 import CallScreen from '../screens/Call'
+import ChatScreen from '../screens/Chat'
 
 
 const {
@@ -46,6 +47,10 @@ class Navigation extends Component {
 
 			case 'calls': {
 				return <CallScreen />
+			}
+
+			case 'chats': {
+				return <ChatScreen />
 			}
 		}
 		console.log(scene)
