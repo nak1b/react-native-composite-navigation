@@ -9,6 +9,7 @@ import Button from './Button'
 import HomeScreen from '../screens/Home'
 import CallScreen from '../screens/Call'
 import ChatScreen from '../screens/Chat'
+import ProfileScreen from '../screens/Profile'
 
 
 const {
@@ -52,13 +53,16 @@ class Navigation extends Component {
 			case 'chats': {
 				return <ChatScreen />
 			}
+
+			case 'profile': {
+				return <ProfileScreen />
+			}
+
+			default: {
+				return <View style={styles.screen} />
+			}
 		}
-		console.log(scene)
-		return (
-			<View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 64, backgroundColor: '#f2ae72'}}>
-				<Button  title="Screen 2" navigate={() => this.props.push({key: 'Second', title: 'Seconds'})} />
-			</View>
-		)
+		
 	}
 
 	render() {
@@ -92,6 +96,11 @@ const styles = StyleSheet.create({
 
 	navTitle: {
 		color: '#494949'
+	},
+
+	screen: {
+		flex: 1,
+		backgroundColor: '#f2e394'
 	}
 })
 
