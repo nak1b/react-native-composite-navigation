@@ -8,7 +8,7 @@ import Button from '../components/Button'
 const Home = (props) => {
 	return (
 		<View style={styles.container}>
-			<Button title="Home Screen 2" navigate={() => props.onClick({key: 'homeTwo', title: 'Home Two'})} />
+			<Button title="Home Screen 3" navigate={() => props.onClick({key: 'homeThree', title: 'Home Three'})} />
 		</View>
 	)
 }
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 		flex: 1, 
 		alignItems: 'center', 
 		justifyContent: 'center', 
-		backgroundColor: '#f2ae72'
+		backgroundColor: '#36c4f2'
 	}
 })
 

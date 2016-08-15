@@ -7,6 +7,8 @@ import Button from './Button'
 
 //Screens
 import HomeScreen from '../screens/Home'
+import HomeScreenTwo from '../screens/HomeTwo'
+import HomeScreenThree from '../screens/HomeThree'
 import CallScreen from '../screens/Call'
 import ChatScreen from '../screens/Chat'
 import ProfileScreen from '../screens/Profile'
@@ -56,6 +58,14 @@ class Navigation extends Component {
 
 			case 'profile': {
 				return <ProfileScreen />
+			}
+
+			case 'homeTwo': {
+				return <HomeScreenTwo />
+			}
+
+			case 'homeThree': {
+				return <HomeScreenThree />
 			}
 
 			default: {
