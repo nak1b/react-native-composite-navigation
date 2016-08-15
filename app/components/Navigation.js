@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, NavigationExperimental } from 'react-native';
 
 import { navPush, navPop, selectTab } from '../actions/NavActions'
-import HomeScreen from '../screens/Home'
 import TabBar from './TabBar'
 import Button from './Button'
+
+//Screens
+import HomeScreen from '../screens/Home'
+import CallScreen from '../screens/Call'
+
 
 const {
   CardStack: NavigationCardStack,
@@ -35,9 +39,20 @@ class Navigation extends Component {
 
 	_renderScene(navigationState) {
 		const scene = navigationState.scene.route.key;
+		switch (scene) {
+			case 'home': {
+				return <HomeScreen />
+			}
+
+			case 'calls': {
+				return <CallScreen />
+			}
+		}
 		console.log(scene)
 		return (
-			<HomeScreen />
+			<View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 64, backgroundColor: '#f2ae72'}}>
+				<Button  title="Screen 2" navigate={() => this.props.push({key: 'Second', title: 'Seconds'})} />
+			</View>
 		)
 	}
 
