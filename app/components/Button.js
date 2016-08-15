@@ -3,15 +3,15 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
 const Button = (props) => {
 	return (
-		<TouchableOpacity style={styles.button} onPress={this.props.navigate}>
-			<Text style={styles.buttonText}>{this.props.title}</Text>
+		<TouchableOpacity style={styles.button} onPress={props.navigate}>
+			<Text style={styles.buttonText}>{props.title}</Text>
 		</TouchableOpacity>
 	)
 }
 
 const styles = StyleSheet.create({
 	button: {
-		width: 70,
+		width: 150,
 		height: 40,
 		alignItems: 'center',
 		justifyContent: 'center',

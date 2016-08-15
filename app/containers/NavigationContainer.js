@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import Navigation from '../components/Navigation'
+import { navPush, navPop, selectTab } from '../actions/NavActions'
 
 export default connect(
   state => ({
@@ -8,13 +9,15 @@ export default connect(
 
   dispatch => ({
     backAction: (tabkey) => {
-      dispatch(navigationPop(tabkey))
+      dispatch(navPop(tabkey))
     },
+
     push: (route) => {
-      dispatch(navigationPush(route))
+      dispatch(navPush(route))
     },
-    changeTab: (route) => {
-      dispatch(changeTab(route))
+
+    changeTab: (tabKey) => {
+      dispatch(selectTab(tabKey))
     }
   })
 )(Navigation)

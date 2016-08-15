@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, NavigationExperimental } from 'react-native';
 
 import { navPush, navPop, selectTab } from '../actions/NavActions'
 import TabBar from './TabBar'
+import Button from './Button'
 
 const {
   CardStack: NavigationCardStack,
@@ -18,10 +19,11 @@ class Navigation extends Component {
 		this._renderScene = this._renderScene.bind(this)
 	}
 
-	_renderHeader(props) {
+	_renderHeader(props, backAction, tabKey) {
 		return (
 			<NavigationHeader
 				{...props}
+				onNavigateBack={() => backAction(tabKey)}
 	  			renderTitleComponent={props => {
 	  				const title = props.scene.route.title
 	  				return <NavigationHeader.Title>{title}</NavigationHeader.Title>
@@ -31,13 +33,14 @@ class Navigation extends Component {
 
 	_renderScene() {
 		return (
-			<View style={{flex: 1, marginTop: 64, backgroundColor: 'blue'}}>
+			<View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 64, backgroundColor: 'blue'}}>
+				<Button  title="Screen 2" navigate={() => this.props.push({key: 'Second', title: 'Seconds'})} />
 			</View>
 		)
 	}
 
 	render() {
-		const {navigationState} = this.props;
+		const {navigationState, backAction} = this.props;
     	const {tabs} = navigationState;
     	const tabKey = tabs.routes[tabs.index].key;
     	const scenes = navigationState[tabKey];
@@ -46,8 +49,9 @@ class Navigation extends Component {
 			<View style={styles.container}>
 				<NavigationCardStack 
 					key={'stact_' + tabKey }
+					onNavigateBack={() => backAction(tabKey)}
 					navigationState={scenes}
-					renderOverlay={this._renderHeader}
+					renderOverlay={ (props) => this._renderHeader(props, backAction, tabKey)}
 					renderScene={this._renderScene}
 				/>
 			</View>
