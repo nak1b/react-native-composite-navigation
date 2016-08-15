@@ -11,14 +11,14 @@ class TabBar extends Component {
 	}
 
 	_renderTabs() {
-		this.props.tabs.map((tab) =>  {
+		return this.props.tabs.routes.map((tab) =>  {
 			return <TabItem tab={tab.key} />
 		})
 	}
 	
 	render() {
 		return (
-			<View style={style.tabs}>
+			<View style={styles.tabs}>
 				{this._renderTabs()}
 			</View>
 		)
@@ -28,7 +28,7 @@ class TabBar extends Component {
 
 const styles = StyleSheet.create({
 	tabs: {
-		flex: 1,
+		height: 44,
 		flexDirection: 'row'
 	}
 })

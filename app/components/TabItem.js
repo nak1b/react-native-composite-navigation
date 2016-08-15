@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
 const TabItem = (props) => {
+	console.log(props)
 	return (
-		<TouchableOpacity style={styles.tabButton} onPress={this.props.changeTab}>
-			<Text>{this.props.tab}</Text>
+		<TouchableOpacity style={styles.tabButton} >
+			<Text style={styles.tabText}>{props.tab}</Text>
 		</TouchableOpacity>
 	)
 }
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: '#FFF'
+		backgroundColor: '#FFF',
 	},
 
 	tabText: {

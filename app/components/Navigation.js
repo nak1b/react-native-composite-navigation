@@ -54,6 +54,7 @@ class Navigation extends Component {
 					renderOverlay={ (props) => this._renderHeader(props, backAction, tabKey)}
 					renderScene={this._renderScene}
 				/>
+				<TabBar tabs={tabs} />
 			</View>
 		)
 	}
@@ -63,7 +64,7 @@ class Navigation extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1
-	}
+	},
 })
 
 

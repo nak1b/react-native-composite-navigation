@@ -5,31 +5,31 @@ const initialState = {
 	tabs: {
 		index: 0,
 		routes: [
-			{key: 'home'},
-			{key: 'about'},
-			{key: 'contact'},
-			{key: 'settings'}
+			{key: 'Home'},
+			{key: 'Calls'},
+			{key: 'Chats'},
+			{key: 'Profile'}
 		]
 	},
 
-	home: {
+	Home: {
 		index: 0,
-		routes: [{key: 'home', title: 'Home Page'}]
+		routes: [{key: 'home', title: 'Home'}]
 	},
 
-	about: {
+	Calls: {
 		index: 0,
-		routes: [{key: 'about', title: 'About Page'}]
+		routes: [{key: 'calls', title: 'Calls'}]
 	},
 
-	contact: {
+	Chats: {
 		index: 0,
-		routes: [{key: 'contact', title: 'Contact Page'}]
+		routes: [{key: 'chats', title: 'Chats'}]
 	},
 
-	settings: {
+	Profile: {
 		index: 0,
-		routes: [{key: 'settings', title: 'Settings Page'}]
+		routes: [{key: 'profile', title: 'Profile'}]
 	}
 
 }
