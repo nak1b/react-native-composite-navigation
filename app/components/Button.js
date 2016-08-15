@@ -11,7 +11,7 @@ const Button = (props) => {
 
 const styles = StyleSheet.create({
 	button: {
-		width: 150,
+		width: 160,
 		height: 40,
 		alignItems: 'center',
 		justifyContent: 'center',
@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
 	},
 
 	buttonText: {
+		fontFamily: 'Avenir Book',
+		letterSpacing: 1,
+		fontWeight: 'bold',
 		color: '#FFF',
 		fontSize: 16
 	}
