@@ -33,14 +33,14 @@ class Navigation extends Component {
 
 	_renderScene() {
 		return (
-			<View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 64, backgroundColor: 'blue'}}>
+			<View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 64, backgroundColor: '#f2ae72'}}>
 				<Button  title="Screen 2" navigate={() => this.props.push({key: 'Second', title: 'Seconds'})} />
 			</View>
 		)
 	}
 
 	render() {
-		const {navigationState, backAction} = this.props;
+		const {navigationState, backAction, changeTab} = this.props;
     	const {tabs} = navigationState;
     	const tabKey = tabs.routes[tabs.index].key;
     	const scenes = navigationState[tabKey];
@@ -54,7 +54,9 @@ class Navigation extends Component {
 					renderOverlay={ (props) => this._renderHeader(props, backAction, tabKey)}
 					renderScene={this._renderScene}
 				/>
-				<TabBar tabs={tabs} />
+				<TabBar
+					navigationState={tabs} 
+					changeTab={changeTab} />
 			</View>
 		)
 	}

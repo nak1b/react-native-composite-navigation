@@ -11,8 +11,12 @@ class TabBar extends Component {
 	}
 
 	_renderTabs() {
-		return this.props.tabs.routes.map((tab) =>  {
-			return <TabItem tab={tab.key} />
+		return this.props.navigationState.routes.map((tab, index) =>  {
+			return <TabItem 
+						key={tab.key}
+						tab={tab.key}
+						selected={this.props.navigationState.index === index} 
+						changeTab={this.props.changeTab}/>
 		})
 	}
 	

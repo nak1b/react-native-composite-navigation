@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
 const TabItem = (props) => {
-	console.log(props)
+	const selectedButton = props.selected ? {'backgroundColor': '#DDD'} : null
+	
 	return (
-		<TouchableOpacity style={styles.tabButton} >
+		<TouchableOpacity activeOpacity={0.7} style={[styles.tabButton, selectedButton]} onPress={() => props.changeTab(props.tab)}>
 			<Text style={styles.tabText}>{props.tab}</Text>
 		</TouchableOpacity>
 	)
