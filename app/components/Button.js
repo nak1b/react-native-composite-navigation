@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
 	},
 
 	buttonText: {
-		color: '#FFF'
+		color: '#FFF',
+		fontSize: 16
 	}
 })
 

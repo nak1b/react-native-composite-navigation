@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text, NavigationExperimental } from 'react-native';
 
 import { navPush, navPop, selectTab } from '../actions/NavActions'
+import HomeScreen from '../screens/Home'
 import TabBar from './TabBar'
 import Button from './Button'
 
@@ -23,19 +24,20 @@ class Navigation extends Component {
 		return (
 			<NavigationHeader
 				{...props}
+
 				onNavigateBack={() => backAction(tabKey)}
 	  			renderTitleComponent={props => {
 	  				const title = props.scene.route.title
-	  				return <NavigationHeader.Title>{title}</NavigationHeader.Title>
+	  				return <NavigationHeader.Title textStyle={styles.navTitle}>{title}</NavigationHeader.Title>
 	  			}} />
 	  	)
 	}
 
-	_renderScene() {
+	_renderScene(navigationState) {
+		const scene = navigationState.scene.route.key;
+		console.log(scene)
 		return (
-			<View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 64, backgroundColor: '#f2ae72'}}>
-				<Button  title="Screen 2" navigate={() => this.props.push({key: 'Second', title: 'Seconds'})} />
-			</View>
+			<HomeScreen />
 		)
 	}
 
@@ -67,6 +69,10 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1
 	},
+
+	navTitle: {
+		color: '#494949'
+	}
 })
 
 
