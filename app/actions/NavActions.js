@@ -7,7 +7,6 @@ export const SELECT_TAB = 'SELECT_TAB'
 
 // Action Creators
 export function selectTab(tabKey) {
-	
 	return {
 		type: SELECT_TAB,
 		tabKey
@@ -16,8 +15,6 @@ export function selectTab(tabKey) {
 
 
 export function navPush(route) {
-	console.log(route)
-	
 	return {
 		type: NAV_PUSH,
 		route
@@ -25,7 +22,6 @@ export function navPush(route) {
 }
 
 export function navPop(tabKey) {
-	console.log(tabKey)
 	return {
 		type: NAV_POP,
 		tabKey
